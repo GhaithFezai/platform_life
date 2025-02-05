@@ -1,0 +1,108 @@
+<body class="antialiased sans-serif bg-gray-300">
+  <div class="flex flex-col min-h-screen border-t-8 border-blue-700">
+    <div class="flex-1">
+      <!-- Header -->
+      <div class="bg-blue-900 bg-cover bg-center bg-no-repeat">
+        <div class="container mx-auto px-4 pt-4 md:pt-10 pb-40"></div>
+      </div>
+
+      <div class="container mx-auto px-4 py-4 -mt-40">
+        <!-- Main Content -->
+        <div>
+          <!-- Greetings -->
+          <br><br><br><br>
+          <div class="add-task-container mb-4">
+            <button (click)="addTask()" class="btn btn-primary">Add Task</button>
+          </div>
+
+          <div class="py-4 md:py-8">
+            <div class="flex gap-4" >
+
+              <div class="w-1/4 flex-shrink-0"  >
+                <div class="bg-gray-100 pb-4 rounded-lg shadow border-t-8 border-orange-600">
+                  <div class="px-4 py-2 bg-orange-100">
+                    <h2 class="font-bold text-orange-700">Todo</h2>
+                  </div>
+                  <div class="px-2" *ngFor="let task of tasks">
+                    <div class="bg-white rounded-lg shadow mb-2 p-2"  *ngIf="task.status === 1" (click)="toggleTaskOptions(task)">
+                      <div class="text-gray-800 font-medium">{{task.taskname}}</div>
+                      <div class="text-gray-500 text-xs">{{task.startDate}}</div>
+                      <div class="text-gray-500 text-xs">{{task.endDate}}</div>
+                      <div *ngIf="task.showOptions" class="flex space-x-2 mt-2">
+                        <button (click)="changeStatus(task, 2)" class="btn btn-warning text-xs py-1 px-2">In Progress</button>
+                        <button (click)="changeStatus(task, 3)" class="btn btn-info text-xs py-1 px-2">Review</button>
+                        <button (click)="changeStatus(task, 4)" class="btn btn-success text-xs py-1 px-2">Done</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- In Progress Column -->
+              <div class="w-1/4 flex-shrink-0"  >
+                <div class="bg-gray-100 pb-4 rounded-lg shadow border-t-8 border-yellow-600">
+                  <div class="px-4 py-2 bg-yellow-100">
+                    <h2 class="font-bold text-yellow-700">In Progress</h2>
+                  </div>
+                  <div class="px-2" *ngFor="let task of tasks">
+                    <div class="bg-white rounded-lg shadow mb-2 p-2"  *ngIf="task.status === 2" (click)="toggleTaskOptions(task)">
+                      <div class="text-gray-800 font-medium">{{task.taskname}}</div>
+                      <div class="text-gray-500 text-xs">{{task.startDate}}</div>
+                      <div class="text-gray-500 text-xs">{{task.endDate}}</div>
+                      <div *ngIf="task.showOptions" class="flex space-x-2 mt-2">
+                        <button (click)="changeStatus(task, 3)" class="btn btn-info text-xs py-1 px-2">Review</button>
+                        <button (click)="changeStatus(task, 4)" class="btn btn-success text-xs py-1 px-2">Done</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Review Column -->
+              <div class="w-1/4 flex-shrink-0"  >
+                <div class="bg-gray-100 pb-4 rounded-lg shadow border-t-8 border-blue-600">
+                  <div class="px-4 py-2 bg-blue-100">
+                    <h2 class="font-bold text-blue-700">Review</h2>
+                  </div>
+                  <div class="px-2" *ngFor="let task of tasks">
+                    <div class="bg-white rounded-lg shadow mb-2 p-2"  *ngIf="task.status === 3" (click)="toggleTaskOptions(task)">
+                      <div class="text-gray-800 font-medium">{{task.taskname}}</div>
+                      <div class="text-gray-500 text-xs">{{task.startDate}}</div>
+                      <div class="text-gray-500 text-xs">{{task.endDate}}</div>
+                      <div *ngIf="task.showOptions" class="flex space-x-2 mt-2">
+                        <button (click)="changeStatus(task, 4)" class="btn btn-success text-xs py-1 px-2">Done</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Done Column -->
+              <div class="w-1/4 flex-shrink-0"  >
+                <div class="bg-gray-100 pb-4 rounded-lg shadow border-t-8 border-green-600">
+                  <div class="px-4 py-2 bg-green-100">
+                    <h2 class="font-bold text-green-700">Done</h2>
+                  </div>
+
+                  <div class="px-2" *ngFor="let task of tasks">
+                    <div class="bg-white rounded-lg shadow mb-2 p-2"  *ngIf="task.status === 4">
+                      <div class="text-gray-800 font-medium">{{task.taskname}}</div>
+                      <div class="text-gray-500 text-xs">{{task.startDate}}</div>
+                      <div class="text-gray-500 text-xs">{{task.endDate}}</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

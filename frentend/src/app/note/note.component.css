@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Asap:400,700);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif&subset=latin-ext,latin);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+}
+
+body {
+  background: #E9F0F4;
+}
+
+.newPost {
+  margin: 50px auto;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 800px;
+  min-width: 480px;
+  background: #FFF;
+  font-family: 'Asap', sans-serif;
+}
+
+.newPost h3 {
+  margin: 0px 0px 20px 0px;
+  font-size: 30px;
+  color: #2E3641; /* $blueDark */
+}
+
+.newPost input[type="text"] {
+  padding-left: 15px;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #C1CFD9; /* $blueLight */
+  box-shadow: inset 0px 0px 3px #C1CFD9; /* $blueLight */
+  outline: none;
+  font-family: 'Bree Serif', serif;
+  font-size: 24px;
+  color: #2E3641; /* $blueDark */
+  margin-bottom: 20px;
+}
+
+.newPost .editor {
+  min-height: 300px;
+  max-height: 500px;
+  width: 100%;
+  resize: none;
+  border: 1px solid #C1CFD9; /* $blueLight */
+  box-shadow: inset 0px 0px 3px #C1CFD9; /* $blueLight */
+  outline: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.newPost .buttons {
+  float: right;
+}
+
+.newPost .buttons button {
+  float: left;
+  width: 120px;
+  height: 45px;
+  border: none;
+  color: #FFF;
+  text-transform: uppercase;
+  outline: none;
+  margin-right: 20px;
+  font-weight: bold;
+  background: #C1CFD9; /* $blueLight */
+  text-decoration: none;
+}
+
+.newPost .buttons button:last-of-type {
+  margin-right: 0px;
+  background: #F97E76; /* $red */
+}
+
+.newPost .buttons button:last-of-type:hover {
+  background: #FF9A8A; /* lighten($red, 5%) */
+}
+
+.newPost .buttons button:active {
+  box-shadow: inset 0px 4px rgba(0,0,0,0.05);
+}
+
+.newPost .buttons button:hover {
+  background: #D0DDE5; /* lighten($blueLight, 5%) */
+}
+
+.newPost:after {
+  content: '';
+  display: block;
+  clear: both;
+}

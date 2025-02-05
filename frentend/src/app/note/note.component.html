@@ -1,0 +1,13 @@
+<div class="newPost">
+    <button class="back-button" routerLink="/dashboard/home" (click)="save()">
+        <i class="fa fa-arrow-left"></i> Back
+      </button>
+    <h3>Add New Note </h3>
+    <input type="text" placeholder="Enter title here"  [(ngModel)]="titre">
+    <textarea class="editor" [(ngModel)]="contenu"></textarea>
+    <div class="buttons">
+      <!--<button type="button">save draft</button>-->
+      <button data-func="clear" type="button" (click)="clear()">clear</button>
+      <button data-func="save" type="button" (click)="save()">save</button>
+    </div>
+  </div>

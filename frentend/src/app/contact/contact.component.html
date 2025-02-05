@@ -1,0 +1,54 @@
+<div class="add-task-container">
+  <button class="btn btn-primary" (click)="addContact()">Add contact</button>
+</div><br><br>
+
+<!-- /////////////////////////////////////////////////////////// -->
+
+<div class="chat-container">
+  <div class="chat-sidebar">
+    <div class="sidebar-header">Contacts</div>
+    <ul class="contact-list">
+      <li class="contact-item" *ngFor="let contact of contact.reverse()" (click)="selectpersonne(contact)">
+        <img src="https://i.ibb.co/fCzfFJw/person.jpg" alt="Contact">
+        <div class="contact-name">{{contact.name}}</div>
+        <button class="delete-btn" (click)="deleteContact(contact.contactcode)">
+          <i class="fas fa-trash-alt"></i> <!-- Icône de la corbeille -->
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenu de chat -->
+  <div class="chat-content">
+    <div class="message-box">
+      <div class="msg_history" #msgHistory>
+        <div *ngFor="let message of messages">
+          
+          <!-- Messages envoyés (droite) -->
+          <div *ngIf="message.idpersonne === code" class="outgoing_msg">
+            <div class="sent_msg">
+              <p>{{ message.text }}</p>
+              <span class="time_date">{{ message.time | date: 'short' }}</span>
+            </div>
+          </div>
+          
+          <!-- Messages reçus (gauche) -->
+          <div *ngIf="message.idpersonne !== code" class="incoming_msg">
+            <div class="received_msg">
+              <p>{{ message.text }}</p>
+              <span class="time_date">{{ message.time | date: 'short' }}</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="send-message">
+        <textarea placeholder="Tapez votre message ici..." id="text_to_send" [(ngModel)]="zonnedetext"></textarea>
+        <button class="send-btn" (click)="sendMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

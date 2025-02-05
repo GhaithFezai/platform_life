@@ -1,0 +1,107 @@
+.scroll-container {
+  max-height: 800px; /* Hauteur maximale pour la zone défilable */
+  overflow-y: auto;  /* Activer le défilement vertical */
+  padding: 10px;     /* Espace autour des éléments */
+  border: 1px solid #ccc; /* Optionnel : bordure pour délimiter */
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Fond léger pour contraster */
+}
+
+/* Personnaliser la barre de défilement */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #542ebd; /* Couleur du curseur */
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Couleur au survol */
+}
+
+
+
+
+.material-card {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.material-card .text-gray-800 {
+  font-size: 18px;  /* Augmentez la taille de la police */
+  color: #333;      /* Assurez-vous que la couleur est assez sombre */
+  font-weight: bold; /* Optionnel : pour rendre le texte plus visible */
+}
+
+
+.material-card {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.material-card:hover {
+  background-color: #f8f9fa;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+button.btn-warning {
+  color: #fff;
+  background-color: #ffc107;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+button.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px; /* Font size */
+
+  
+}
+
+/* General button styles */
+button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  margin: 5px; /* Margin between buttons */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active effect */
+button:active {
+  background-color: #3e8e41; /* Even darker green when active */
+  transform: translateY(0); /* Reset lift effect */
+}
+
+/* Specific styles for the delete button */
+button[data-func="delete"] {
+  background-color: #d33; /* Red background for delete */
+}
+
+button[data-func="delete"]:hover {
+  background-color: #c00; /* Darker red on hover */
+}

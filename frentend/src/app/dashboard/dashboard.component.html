@@ -1,0 +1,81 @@
+<main class="d-flex">
+  <!-- Menu de navigation latéral -->
+  <nav class="main-menu">
+    <div class="logo-container">
+      <img src="assets/logo1.png" alt="Logo" class="logo" />
+    </div><br><br>
+    <ul>
+      <li  [ngClass]="{'nav-item': true, 'active': router === 'home'}" (click)="changeRouter('home')">
+        <b></b>
+        <b></b>
+        <a routerLink="/dashboard/home">
+          <i class="fa fa-house nav-icon"></i>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <br>
+
+      <li  [ngClass]="{'nav-item': true, 'active': router === 'profile'}" (click)="changeRouter('profile')">
+        <b></b>
+        <b></b>
+        <a routerLink="/dashboard/profile">
+          <i class="fa fa-user nav-icon"></i>
+          <span class="nav-text">Profile</span>
+        </a>
+      </li>
+     
+      <br>
+      <li [ngClass]="{'nav-item': true, 'active': router === 'tableau de tache'}" (click)="changeRouter('tableau de tache')">
+        <b></b>
+        <b></b>
+        <a routerLink="/dashboard/tableau">
+          <i class="fa fa-calendar-check nav-icon"></i>
+          <span class="nav-text">show tache</span>
+        </a>
+      </li>
+      <br>
+      <li [ngClass]="{'nav-item': true, 'active': router === 'ajouter un tache'}" (click)="changeRouter('ajouter un tache')">
+        <b></b>
+        <b></b>
+        <a routerLink="/dashboard/taske">
+          <i class="fa fa-calendar-check nav-icon"></i>
+          <span class="nav-text">add taske</span>
+        </a>
+      </li>
+
+
+      <br>
+      
+
+
+
+      <li [ngClass]="{'nav-item': true, 'active': router === 'contact'}" (click)="changeRouter('contact')">
+        <b></b>
+        <b></b>
+        <a routerLink="/dashboard/contact">
+          <i class="fa fa-calendar-check nav-icon"></i>
+          <span class="nav-text">contact</span>
+        </a>
+      </li>
+<br><br><br><br><br>
+<li [ngClass]="{'nav-item': true, 'active': router === 'loug out'}" (click)="changeRouter('loug out')">
+  <b></b>
+  <b></b>
+  <a routerLink="/login">
+    <i class="fa fa-calendar-check nav-icon"></i>
+    <span class="nav-text">loug out </span>
+  </a>
+</li>
+      
+    </ul>
+  </nav>
+
+
+
+  <!--contenue dans le dashboard -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+      </div>
+     
+  
+</main>

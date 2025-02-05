@@ -1,0 +1,29 @@
+<div class="add-task-container">
+  <button class="btn btn-primary" (click)="addMatiere()">Ajouter Matière</button>
+</div>
+<br><br>
+
+<!-- Conteneur avec scroll -->
+<div class="scroll-container">
+  <div 
+    *ngFor="let material of materialName; let i = index" 
+    class="material-card bg-white rounded-lg shadow mb-2 p-4"
+  >
+    <div class="text-gray-800" style="font-size: 16px; color: #000000;">
+      {{ material.material }}
+    </div>
+
+    <!-- Ajouter les boutons pour consulter et supprimer -->
+    <div class="button-group">
+      <!-- Bouton pour consulter -->
+      <button class="btn btn-info" [routerLink]="['/dashboard/note', material._id]">
+        Consulter
+      </button>
+
+      <!-- Bouton pour supprimer -->
+      <button class="btn btn-danger" (click)="deleteMaterial(i, material._id)">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
